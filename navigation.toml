@@ -1,0 +1,6 @@
+[[item]]
+name = "About"
+path = "#about"
+[[item]]
+name = "Writeups"
+path = "/writeups"

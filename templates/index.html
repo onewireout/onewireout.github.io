@@ -1,0 +1,42 @@
+{% extends "zola-grayscale/templates/index.html" %}
+
+{% block masthead_button_label %}Writeups{% endblock masthead_button_label %}
+{% block masthead_button_url %}{{ get_url(path="@/writeups/_index.md") }}{% endblock masthead_button_url %}
+
+{% block about_title %}About this place{% endblock about_title %}
+{% block about_description %}
+    I'm a builder. Most of what I make exists
+    because something in my life needed solving; audio tooling
+    for my production pipeline, machine learning where it actually earns its
+    keep, scripts and systems for a life run on Arch. Everything here was made
+    for me, the only bar it ever had to clear was if it worked.
+    <br><br>
+    The writeups are just that; what I made, why I made it, the reasoning,
+    the decisions along the way. It's all stuff that exists
+    and runs, and the code is there if you want a look.
+{% endblock about_description %}
+{% block about_image %}{% endblock about_image %}
+
+{% block projects %}
+{% set writeups = get_section(path="writeups/_index.md") %}
+<section class="projects-section bg-light" id="writeups">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-black mb-4">Recent writeups</h2>
+        {% for page in writeups.pages | slice(end=5) %}
+        <div class="mb-4 post-preview">
+            {% if page.extra.image %}
+            <a href="{{ page.permalink }}"><img class="post-thumb" src="{{ page.extra.image }}" alt="{{ page.title }}"></a>
+            {% endif %}
+            <div>
+                <h4><a href="{{ page.permalink }}">{{ page.title }}</a></h4>
+                {% if page.date %}<small class="text-muted">{{ page.date | date(format="%B %e, %Y") }}</small>{% endif %}
+                {% if page.description %}<p class="text-black-50 mb-0">{{ page.description }}</p>{% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock projects %}
+
+{% block signup %}{% endblock signup %}
+{% block contact %}{% endblock contact %}

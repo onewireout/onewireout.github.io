@@ -1,0 +1,34 @@
+{% import "macros/head.html" as head %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="{{ page.description | default(value=config.description) }}" />
+    <title>{{ page.title }} &middot; {{ config.title }}</title>
+    <link href="{{ get_url(path="css/styles.css") }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ get_url(path="css/custom.css") }}" />
+    <style>
+        article p { font-weight: 500; }
+        article h1 { font-weight: 700; }
+        article img { max-width: 100%; height: auto; border-radius: 4px; margin: 0 0 0.4rem; }
+        article p { line-height: 1.35; margin-bottom: 0.6rem; }
+    </style>
+</head>
+<body class="bg-black">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="{{ get_url(path="/") }}">{{ config.title }}</a>
+        </div>
+    </nav>
+    <section class="about-section" style="min-height: 100vh;">
+        <div class="container px-4 px-lg-5" style="max-width: 46rem;">
+            <article>
+                <h1 class="text-white mb-2">{{ page.title }}</h1>
+                {% if page.date %}<p class="text-white-50"><small>{{ page.date | date(format="%B %e, %Y") }}</small></p>{% endif %}
+                <div class="text-white-50">{{ page.content | safe }}</div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

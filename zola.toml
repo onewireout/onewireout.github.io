@@ -1,0 +1,18 @@
+# The URL the site will be built for.
+# Swap this for the custom domain once it's purchased and DNS is pointed.
+base_url = "https://onewireout.github.io"
+
+title = "One Wire Out"
+author = "F41N"
+description = "I make things for myself, I put them here."
+
+theme = "zola-grayscale"
+compile_sass = true
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
