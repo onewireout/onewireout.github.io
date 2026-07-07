@@ -10,6 +10,16 @@ body, h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .btn {
     font-family: "Space Grotesk", sans-serif !important;
 }
 
+/* Masthead button: dark gray, lightens on hover. */
+.btn-primary {
+    --bs-btn-bg: #2a2a2e;
+    --bs-btn-border-color: #3a3a40;
+    --bs-btn-hover-bg: #3f3f46;
+    --bs-btn-hover-border-color: #4a4a52;
+    --bs-btn-active-bg: #4a4a52;
+    --bs-btn-active-border-color: #55555e;
+}
+
 /* Banner behind the about section: image with dark overlay for readability.
    Swap the url() for your own photo when it exists. */
 .about-section {
