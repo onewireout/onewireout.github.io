@@ -9,10 +9,47 @@
     <link href="{{ get_url(path="css/styles.css") }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ get_url(path="css/custom.css") }}" />
     <style>
-        article p { font-weight: 500; }
         article h1 { font-weight: 700; }
         article img { max-width: 100%; height: auto; border-radius: 4px; margin: 0 0 0.4rem; }
-        article p { line-height: 1.35; margin-bottom: 0.6rem; }
+        .about-section article p { font-weight: 500; line-height: 1.45; margin-bottom: 1rem; }
+        .about-section article h2 { margin-top: 2.25rem; margin-bottom: 0.75rem; color: #6fc3b2; }
+        .about-section article ul, .about-section article ol, .about-section article pre, .about-section article table { margin-bottom: 1rem; }
+        .about-section article :not(pre) > code {
+            color: #6fc3b2;
+            background: rgba(255, 255, 255, 0.07);
+            padding: 0.1em 0.35em;
+            border-radius: 4px;
+            font-size: 0.875em;
+        }
+        .about-section article h2 {
+            padding-bottom: 0.35rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .about-section article table {
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .about-section article th, .about-section article td {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.45rem 1rem;
+        }
+        .about-section article thead th {
+            color: #6fc3b2;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .about-section article pre {
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.875em;
+        }
+        .about-section article hr {
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            width: 8rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 <body class="bg-black">
