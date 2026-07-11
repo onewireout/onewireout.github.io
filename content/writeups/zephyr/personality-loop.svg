@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 390" font-family="-apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif">
+  <defs>
+    <marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6fc3b2"/>
+    </marker>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a8fa3"/>
+    </marker>
+    <radialGradient id="glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#6fc3b2" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#6fc3b2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="0" y="0" width="760" height="390" rx="10" fill="#15151d"/>
+  <rect x="380" y="60" width="380" height="290" fill="url(#glow)"/>
+
+  <!-- ══ arrows ══ -->
+  <!-- main loop (teal) -->
+  <line x1="194" y1="98" x2="264" y2="98" stroke="#6fc3b2" stroke-width="1.6" marker-end="url(#teal)"/>
+  <line x1="424" y1="104" x2="474" y2="136" stroke="#6fc3b2" stroke-width="1.6" marker-end="url(#teal)"/>
+  <line x1="575" y1="200" x2="575" y2="288" stroke="#6fc3b2" stroke-width="1.6" marker-end="url(#teal)"/>
+  <line x1="496" y1="322" x2="366" y2="322" stroke="#6fc3b2" stroke-width="1.6" marker-end="url(#teal)"/>
+  <polyline points="166,322 26,322 26,98 34,98" fill="none" stroke="#6fc3b2" stroke-width="1.6" marker-end="url(#teal)"/>
+
+  <!-- secondary feeds (gray) -->
+  <line x1="194" y1="208" x2="264" y2="208" stroke="#8a8fa3" stroke-width="1.3" marker-end="url(#gray)"/>
+  <line x1="194" y1="112" x2="264" y2="194" stroke="#8a8fa3" stroke-width="1.1" opacity="0.5" marker-end="url(#gray)"/>
+  <line x1="194" y1="194" x2="264" y2="112" stroke="#8a8fa3" stroke-width="1.1" opacity="0.5" marker-end="url(#gray)"/>
+  <line x1="424" y1="202" x2="474" y2="170" stroke="#8a8fa3" stroke-width="1.3" marker-end="url(#gray)"/>
+  <!-- journal + valence lanes into the briefing -->
+  <line x1="348" y1="130" x2="292" y2="288" stroke="#8a8fa3" stroke-width="1.1" opacity="0.4" stroke-dasharray="4 4" marker-end="url(#gray)"/>
+  <line x1="348" y1="240" x2="302" y2="288" stroke="#8a8fa3" stroke-width="1.1" opacity="0.4" stroke-dasharray="4 4" marker-end="url(#gray)"/>
+
+  <!-- arrow labels -->
+  <text x="588" y="248" font-size="10.5" fill="#8a8fa3">rewrites, weekly</text>
+  <text x="431" y="313" font-size="10.5" fill="#8a8fa3" text-anchor="middle">slow path</text>
+  <text x="96" y="313" font-size="10.5" fill="#8a8fa3" text-anchor="middle">hot path, every session</text>
+
+  <!-- ══ boxes ══ -->
+  <!-- Sessions -->
+  <rect x="40" y="70" width="150" height="56" rx="8" fill="#1e1e2a" stroke="#3a3a4a" stroke-width="1.2"/>
+  <text x="115" y="94" font-size="13.5" fill="#d5d9e4" text-anchor="middle" font-weight="600">Sessions</text>
+  <text x="115" y="112" font-size="10.5" fill="#8a8fa3" text-anchor="middle">conversations, type tags</text>
+
+  <!-- Excursions -->
+  <rect x="40" y="180" width="150" height="56" rx="8" fill="#1e1e2a" stroke="#3a3a4a" stroke-width="1.2"/>
+  <text x="115" y="204" font-size="13.5" fill="#d5d9e4" text-anchor="middle" font-weight="600">Excursions</text>
+  <text x="115" y="222" font-size="10.5" fill="#8a8fa3" text-anchor="middle">art &amp; poetry, autonomous</text>
+
+  <!-- Journal -->
+  <rect x="270" y="70" width="150" height="56" rx="8" fill="#1e1e2a" stroke="#3a3a4a" stroke-width="1.2"/>
+  <text x="345" y="94" font-size="13.5" fill="#d5d9e4" text-anchor="middle" font-weight="600">Journal</text>
+  <text x="345" y="112" font-size="10.5" fill="#8a8fa3" text-anchor="middle">fingerprints, decay to 0</text>
+
+  <!-- Valence -->
+  <rect x="270" y="180" width="150" height="56" rx="8" fill="#1e1e2a" stroke="#3a3a4a" stroke-width="1.2"/>
+  <text x="345" y="204" font-size="13.5" fill="#d5d9e4" text-anchor="middle" font-weight="600">Valence</text>
+  <text x="345" y="222" font-size="10.5" fill="#8a8fa3" text-anchor="middle">daily states, slow traits</text>
+
+  <!-- Sleep cycle -->
+  <rect x="480" y="112" width="190" height="88" rx="8" fill="#1c2623" stroke="#6fc3b2" stroke-width="1.4"/>
+  <text x="575" y="140" font-size="13.5" fill="#d5d9e4" text-anchor="middle" font-weight="600">Weekly sleep cycle</text>
+  <text x="575" y="160" font-size="10.5" fill="#8a8fa3" text-anchor="middle">consolidate &#183; spine test</text>
+  <text x="575" y="176" font-size="10.5" fill="#8a8fa3" text-anchor="middle">quirk generator</text>
+
+  <!-- Dynamic Core -->
+  <rect x="500" y="294" width="150" height="56" rx="8" fill="#1c2623" stroke="#6fc3b2" stroke-width="1.4"/>
+  <text x="575" y="318" font-size="13.5" fill="#d5d9e4" text-anchor="middle" font-weight="600">Dynamic Core</text>
+  <text x="575" y="336" font-size="10.5" fill="#6fc3b2" text-anchor="middle" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace">dual_core.json</text>
+
+  <!-- Session briefing -->
+  <rect x="170" y="294" width="196" height="56" rx="8" fill="#1e1e2a" stroke="#3a3a4a" stroke-width="1.2"/>
+  <text x="268" y="318" font-size="13.5" fill="#d5d9e4" text-anchor="middle" font-weight="600">Session briefing</text>
+  <text x="268" y="336" font-size="10.5" fill="#8a8fa3" text-anchor="middle">three sentences, pinned, unseen</text>
+</svg>
