@@ -82,7 +82,7 @@ scraper logs (program, title, timestamp)
 
 Each tier exists so the tier above it never touches raw data. Nightly, the
 micro tier converts the day's accumulated logs into structured JSON; a
-transcription job, something the good model can excel at. Roughly every two
+transcription job, something the small model can excel at. Roughly every two
 days, the midi tier takes the newest chunk and reads it against the week's
 earlier ones, surfacing recurring patterns and rhythms and organizing them
 into findings. By the time the macro tier wakes on Sunday, the week has already
