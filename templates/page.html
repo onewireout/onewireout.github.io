@@ -43,6 +43,15 @@
             border-radius: 6px;
             font-size: 0.875em;
         }
+        .about-section article blockquote {
+            border-left: 3px solid #6fc3b2;
+            margin: 1.75rem 0;
+            padding: 0.35rem 1.5rem;
+            color: #fff;
+            font-size: 1.35em;
+            font-style: italic;
+        }
+        .about-section article blockquote p { margin-bottom: 0; }
         .about-section article hr {
             border: 0;
             border-top: 1px solid rgba(255, 255, 255, 0.25);
@@ -60,7 +69,7 @@
     </nav>
     <section class="about-section" style="min-height: 100vh;">
         <div class="container px-4 px-lg-5" style="max-width: 46rem;">
-            <article>
+            <article style="padding-bottom: 6rem;">
                 <h1 class="text-white mb-2">{{ page.title }}</h1>
                 {% if page.date %}<p class="text-white-50"><small>{{ page.date | date(format="%B %e, %Y") }}</small></p>{% endif %}
                 <div class="text-white-50">{{ page.content | safe }}</div>

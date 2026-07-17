@@ -4,3 +4,6 @@ path = "#about"
 [[item]]
 name = "Writeups"
 path = "/writeups"
+[[item]]
+name = "Musings"
+path = "/musings"
