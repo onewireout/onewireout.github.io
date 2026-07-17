@@ -14,22 +14,27 @@
     The writeups are just that; what I made, why I made it, the reasoning,
     the decisions along the way. It's all stuff that exists
     and runs, and the code is there if you want a look.
+    <br><br>
+    The musings are a little more abstract. Just things I've noticed, only
+    the idea itself being built.
 {% endblock about_description %}
 {% block about_image %}{% endblock about_image %}
 
 {% block projects %}
 {% set writeups = get_section(path="writeups/_index.md") %}
+{% set musings = get_section(path="musings/_index.md") %}
+{% set recent = writeups.pages | concat(with=musings.pages) | sort(attribute="title") | reverse | sort(attribute="date") | reverse %}
 <section class="projects-section bg-light" id="writeups">
     <div class="container px-4 px-lg-5">
-        <h2 class="text-black mb-4">Recent writeups</h2>
-        {% for page in writeups.pages | slice(end=5) %}
+        <h2 class="text-black mb-4">Recent</h2>
+        {% for page in recent | slice(end=5) %}
         <div class="mb-4 post-preview">
             {% if page.extra.image %}
             <a href="{{ page.permalink }}"><img class="post-thumb" src="{{ page.extra.image }}" alt="{{ page.title }}"></a>
             {% endif %}
             <div>
                 <h4><a href="{{ page.permalink }}">{{ page.title }}</a></h4>
-                {% if page.date %}<small class="text-muted">{{ page.date | date(format="%B %e, %Y") }}</small>{% endif %}
+                {% if page.date %}<small class="text-muted">{{ page.date | date(format="%B %e, %Y") }}{% if page.ancestors is containing("musings/_index.md") %} &middot; musing{% else %} &middot; writeup{% endif %}</small>{% endif %}
                 {% if page.description %}<p class="text-black-50 mb-0">{{ page.description }}</p>{% endif %}
             </div>
         </div>
