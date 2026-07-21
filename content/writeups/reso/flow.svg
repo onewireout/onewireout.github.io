@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" font-family="-apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif">
+  <defs>
+    <marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#46787b"/>
+    </marker>
+    <marker id="rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d4b9a8"/>
+    </marker>
+    <marker id="orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#dca060"/>
+    </marker>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a8a93"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="460" rx="10" fill="#1a1a20"/>
+
+  <!-- reso TUI -->
+  <rect x="30" y="40" width="170" height="60" rx="8" fill="#1e1e24" stroke="#d4b9a8" stroke-width="1.3"/>
+  <text x="115" y="65" font-size="13.5" fill="#e8e4df" text-anchor="middle" font-weight="600">reso (TUI)</text>
+  <text x="115" y="83" font-size="10" fill="#8a8a93" text-anchor="middle">you type, history kept client-side</text>
+
+  <!-- hub -->
+  <rect x="315" y="40" width="170" height="60" rx="8" fill="#1e1e24" stroke="#6ba2a6" stroke-width="1.3"/>
+  <text x="400" y="65" font-size="13.5" fill="#e8e4df" text-anchor="middle" font-weight="600">the hub</text>
+  <text x="400" y="83" font-size="10" fill="#8a8a93" text-anchor="middle">unix socket, NDJSON stream</text>
+
+  <!-- llama.cpp -->
+  <rect x="600" y="40" width="170" height="60" rx="8" fill="#1e1e24" stroke="#a78bfa" stroke-width="1.3"/>
+  <text x="685" y="65" font-size="13.5" fill="#e8e4df" text-anchor="middle" font-weight="600">llama.cpp</text>
+  <text x="685" y="83" font-size="10" fill="#8a8a93" text-anchor="middle">qwen3.5:9b, 65.5k ctx</text>
+
+  <!-- arrows top row: request flows out along the top edge, tokens stream back along the bottom edge -->
+  <line x1="200" y1="48" x2="313" y2="48" stroke="#d4b9a8" stroke-width="1.6" marker-end="url(#rose)"/>
+  <line x1="485" y1="48" x2="598" y2="48" stroke="#d4b9a8" stroke-width="1.6" marker-end="url(#rose)"/>
+  <text x="400" y="30" font-size="10" fill="#8a8a93" text-anchor="middle">messages + history</text>
+  <line x1="598" y1="92" x2="485" y2="92" stroke="#46787b" stroke-width="1.6" marker-end="url(#teal)"/>
+  <line x1="313" y1="92" x2="200" y2="92" stroke="#46787b" stroke-width="1.6" marker-end="url(#teal)"/>
+  <text x="400" y="112" font-size="10" fill="#8a8a93" text-anchor="middle">thinking + content tokens</text>
+
+  <!-- reply arrives -->
+  <line x1="115" y1="100" x2="115" y2="150" stroke="#46787b" stroke-width="1.6" marker-end="url(#teal)"/>
+
+  <!-- parse -->
+  <rect x="30" y="150" width="170" height="60" rx="8" fill="#1e1e24" stroke="#dca060" stroke-width="1.3"/>
+  <text x="115" y="175" font-size="13.5" fill="#e8e4df" text-anchor="middle" font-weight="600">parse ```tool blocks</text>
+  <text x="115" y="193" font-size="10" fill="#8a8a93" text-anchor="middle">JSON, salvage malformed calls</text>
+
+  <!-- no tool calls -> plain reply -->
+  <line x1="30" y1="180" x2="-40" y2="180" stroke="#8a8a93" stroke-width="0" opacity="0"/>
+
+  <!-- side-effecting? decision -->
+  <line x1="115" y1="210" x2="115" y2="255" stroke="#dca060" stroke-width="1.6" marker-end="url(#orange)"/>
+  <polygon points="115,255 200,290 115,325 30,290" fill="#1e1e24" stroke="#dca060" stroke-width="1.3"/>
+  <text x="115" y="285" font-size="11" fill="#e8e4df" text-anchor="middle" font-weight="600">side-</text>
+  <text x="115" y="299" font-size="11" fill="#e8e4df" text-anchor="middle" font-weight="600">effecting?</text>
+
+  <!-- yes -> confirm -->
+  <line x1="200" y1="290" x2="290" y2="290" stroke="#dca060" stroke-width="1.6" marker-end="url(#orange)"/>
+  <text x="245" y="282" font-size="10" fill="#8a8a93" text-anchor="middle">yes</text>
+  <rect x="290" y="260" width="170" height="60" rx="8" fill="#1e1e24" stroke="#d4b9a8" stroke-width="1.3"/>
+  <text x="375" y="285" font-size="13.5" fill="#e8e4df" text-anchor="middle" font-weight="600">confirm — y/n</text>
+  <text x="375" y="303" font-size="10" fill="#8a8a93" text-anchor="middle">inline, defaults to no</text>
+
+  <!-- no -> declined -->
+  <line x1="115" y1="325" x2="115" y2="365" stroke="#8a8a93" stroke-width="1.4" marker-end="url(#gray)"/>
+  <text x="150" y="350" font-size="10" fill="#8a8a93" text-anchor="middle">no / declined</text>
+
+  <!-- confirm yes -> execute -->
+  <line x1="460" y1="290" x2="560" y2="290" stroke="#d4b9a8" stroke-width="1.6" marker-end="url(#rose)"/>
+  <text x="510" y="282" font-size="10" fill="#8a8a93" text-anchor="middle">yes</text>
+  <rect x="560" y="260" width="170" height="60" rx="8" fill="#1e1e24" stroke="#6ba2a6" stroke-width="1.3"/>
+  <text x="645" y="285" font-size="13.5" fill="#e8e4df" text-anchor="middle" font-weight="600">execute tool</text>
+  <text x="645" y="303" font-size="10" fill="#8a8a93" text-anchor="middle">read/write gated by _read_paths</text>
+
+  <!-- results feed back into history -->
+  <rect x="30" y="370" width="700" height="55" rx="8" fill="#1e1e24" stroke="#8a8a93" stroke-width="1.3"/>
+  <text x="380" y="393" font-size="13.5" fill="#e8e4df" text-anchor="middle" font-weight="600">tool result appended to history as a user turn</text>
+  <text x="380" y="410" font-size="10" fill="#8a8a93" text-anchor="middle">loops back into the hub — up to 20 iterations, or Esc to interrupt</text>
+
+  <line x1="115" y1="365" x2="115" y2="368" stroke="#8a8a93" stroke-width="1.4" marker-end="url(#gray)"/>
+  <line x1="645" y1="320" x2="645" y2="370" stroke="#6ba2a6" stroke-width="1.6" marker-end="url(#teal)"/>
+
+  <path d="M 700 370 C 700 260, 700 140, 487 100" fill="none" stroke="#8a8a93" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#gray)"/>
+  <text x="712" y="232" font-size="10" fill="#8a8a93" text-anchor="middle">back to</text>
+  <text x="712" y="245" font-size="10" fill="#8a8a93" text-anchor="middle">the hub</text>
+
+  <!-- no tool calls path -->
+  <text x="380" y="440" font-size="10" fill="#8a8a93" text-anchor="middle" font-style="italic">no tool calls in the reply: turn just ends here as plain text</text>
+</svg>
