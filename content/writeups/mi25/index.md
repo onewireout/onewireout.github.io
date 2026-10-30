@@ -194,4 +194,4 @@ smaller models. A 9B runs at 40–45 t/s.
 
 <hr style="margin-top: 3rem;" />
 
-*Test builds, overrides, and benchmark scripts to be uploaded to GitHub*
+*Test builds, overrides, and benchmark scripts available on [GitHub](https://github.com/onewireout/mi25-llm-inference).*
