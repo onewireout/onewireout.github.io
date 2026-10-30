@@ -194,4 +194,4 @@ But maybe one day.
 
 <hr style="margin-top: 3rem;" />
 
-*Code to be uploaded to GitHub*
+*Current version available on [GitHub](https://github.com/onewireout/reso).*
