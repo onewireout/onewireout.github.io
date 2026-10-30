@@ -301,4 +301,4 @@ typing this inside it.
 
 <hr style="margin-top: 3rem;" />
 
-*Code to be uploaded to GitHub*
+*Code available on [GitHub](https://github.com/onewireout/resonance).*
