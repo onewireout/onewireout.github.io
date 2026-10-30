@@ -305,4 +305,4 @@ one you demo. Ask me again in a few months what it turned into.
 
 <hr style="margin-top: 3rem;" />
 
-*Code to be uploaded to GitHub*
+*Current version available on [GitHub](https://github.com/onewireout/zephyr).*
